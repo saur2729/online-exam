@@ -13,20 +13,26 @@ client = MongoClient('localhost', 27017)  # Connect to mongodb
 def home_page():
   return "Welcome to Home page"
 
-# @app.route("/db")
-# def db_page():
-#   coll_list = []
-#   db = client["job-scheduler"]
-#   collections = db.list_collection_names()
-#   for coll in collections:
-#     coll_list.append(coll)
-#   print(coll_list)
-#   return {"DBS" : coll_list}
+@app.route("/login")
+def login():
+  coll_list = []
+  db = client["online-exam"]
+  collections = db.list_collection_names()
+  for coll in collections:
+    coll_list.append(coll)
+  print(coll_list)
+  return {"DBS" : coll_list}
 
-# @app.route("/jobs")
-# def get_jobs(instance_id="local", job_name="demo"):
+@app.route("/signup")
+def signup():
+  """
+  email 
+  password
+  first name
+  last name
+  """
 
-#   return {"strr" : instance_id}
+  return {"strr" : instance_id}
 
 # @app.route("/add-job")
 # def add_job(obj):
