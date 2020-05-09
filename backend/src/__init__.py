@@ -1,28 +1,17 @@
-import os
 from flask import Flask
 from flask_cors import CORS
-import firebase_admin
-from firebase_admin import credentials, firestore, initialize_app
+from pymongo import MongoClient
 
 app = Flask(__name__)
 app.debug = True
 CORS(app)
 
-# connect to Firebase DB
-cred = credentials.Certificate(os.environ['GOOGLE_APPLICATION_CREDENTIALS'])
-default_app = initialize_app(cred)
-db = firestore.client()
+client = MongoClient('localhost', 27017)  # Connect to mongodb
+
 
 @app.route("/")
 def home_page():
-  doc_ref = db.collection(u'users').document(u'alovelace')
-  setData = doc_ref.set({
-    'first': 'Ada',
-    'last': 'Lovelace',
-    'born': 1815
-  })
-  print(setData)
-  return str(setData)
+  return "Welcome to Home page"
 
 # @app.route("/db")
 # def db_page():
