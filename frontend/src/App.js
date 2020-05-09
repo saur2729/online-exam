@@ -2,14 +2,14 @@ import React from 'react';
 import {BrowserRouter} from "react-router-dom";
 import 'typeface-roboto';
 
-import Home from './components/Home'
+import Login from './components/auth/Login'
 
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-        <Home />
+        <Login />
       </BrowserRouter>
     </div>
   );
