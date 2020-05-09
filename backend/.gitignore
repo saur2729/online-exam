@@ -1,0 +1,4 @@
+__pycache__
+venv-exm/
+# Never upload this JSON file to public repo
+firebase-conn.json
