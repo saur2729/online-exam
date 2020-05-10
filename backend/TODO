@@ -1,0 +1,38 @@
+{'_id': ObjectId('5eb7f13dc24fd1a5c807ba48'), 'email': '', 'password': 'sha256$ch8UWvnf$960d161d92e78b15ee42a4aa39a3e0020ea6cbf3b317c1a3221360e5375acf93', 'firstName': '', 'lastName': ''},
+
+
+{'_id': ObjectId('5eb7f20fc24fd1a5c807ba49'), 'email': 'ad@gamil,cdom', 'password': 'sha256$w3kfxQhp$4506124f75571fab6d2163f9a59d383770c8d9ef64ca48589fdc511d1e12fd80', 'firstName': 'adam ', 'lastName': 'levine'}
+
+
+qna ->
+{ _id: "", #examID
+  "exam_name":ename,
+  "questions":[{
+                ques_id: "",
+                ques: "",
+                ansType: "MCQ",
+                options: [opt1, opt2, opt3,....]
+                correctAns: "",
+            },
+            {   # Lets do this later *****
+                ques_id: "",
+                ques: "",
+                ansType: "para",
+                correctAns : None # as this is para
+            }] ,
+   "atteptedBy" : [uid1, uid2, uid3 .....]
+}
+
+results -> 
+{
+ uid: {
+        examID: {
+            ques_id1: [T/F, SelectAns],
+            ques_id2: T/F,
+            ques_id3: T/F,
+            ques_id4: T/F
+        }
+      }
+ }
+
+}

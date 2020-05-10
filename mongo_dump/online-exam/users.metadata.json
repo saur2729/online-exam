@@ -1,1 +1,1 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"online-exam.users"}],"uuid":"a2089d3108cd456c8bf9dcf26bf4e90c"}
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"online-exam.users"}],"uuid":"e06150f0feee4e5ebf9ee1818e7aa45a"}

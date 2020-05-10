@@ -68,6 +68,8 @@ export default function SignUp() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
+        firstName: state.firstName,
+        lastName: state.lastName,
         email: state.email,
         passsword : state.password
       })
@@ -75,13 +77,14 @@ export default function SignUp() {
     alert(requestData.body)
     const res = await fetch("/signup", requestData);
     const signup_res = await res.json();
+    alert(signup_res)
     // let all_rows = [];
     // const data = all_data["dashboard_data"];
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
 
   return (

@@ -1,0 +1,47 @@
+from flask import Flask,jsonify,request
+from flask_cors import CORS
+from pymongo import MongoClient
+from werkzeug.security import check_password_hash,generate_password_hash
+
+app = Flask(__name__)
+app.debug = True
+CORS(app)
+
+client = MongoClient('localhost', 27017)  # Connect to mongodb
+
+
+@app.route("/")
+def home_page():
+    return "Welcome to Home page"
+
+@app.route("/login")
+def login():
+    coll_list = []
+    db = client["online-exam"]
+    collections = db.list_collection_names()
+    for coll in collections:
+      coll_list.append(coll)
+    print(coll_list)
+    return {"DBS" : coll_list}
+
+@app.route("/signup",methods=['POST','GET'])
+def signup():
+    coll_list = []
+    db = client["online-exam"]
+    user_col=db["users"]
+
+    if request.method == 'POST':
+        respone = request.json                   # getting the form data sent by form on the react front end
+        email = respone.get('email')
+        password_hash = generate_password_hash(respone.get('password'))
+        first_name = respone.get('first_name')
+        last_name = respone.get('last_name')
+        new_user={"email":email,"password":password_hash,"first_name":first_name,"last_name":last_name}
+        new_entry = user_col.insert_one(new_user)
+    else:
+        new_user={"email":email,"password":password_hash,"first_name":first_name,"last_name":last_name}
+        new_entry = user_col.insert_one(new_user)
+        
+        return 'done'
+  
+
