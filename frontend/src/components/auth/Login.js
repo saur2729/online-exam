@@ -66,20 +66,19 @@ export default function Login() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: state.email,
-        passsword : state.password
+        password : state.password
       })
     };
     //alert(requestData.body)
     const res = await fetch("/login", requestData);
     const login_res = await res.json();
-    alert(login_res)
-    // let all_rows = [];
-    // const data = all_data["dashboard_data"];
+    alert(requestData.body)
+
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
     <Container component="main" maxWidth="xs">
