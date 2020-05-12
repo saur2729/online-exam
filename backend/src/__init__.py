@@ -71,11 +71,11 @@ def signup():
   if request.method == 'POST':
     response = request.json   # getting the form data sent by form on the react front end
     email = response.get('email')
-    print(email)
-    password=response.get('passsword')
-    print(password)
+    
+    password=response.get('password')
+    
     password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
-    print('password hashed')
+    
     first_name = response.get('firstName')
     last_name = response.get('lastName')
     new_user={"email":email,"password":password_hash,"firstName":first_name,"lastName":last_name}
