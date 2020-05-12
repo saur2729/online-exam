@@ -1,0 +1,35 @@
+DASHBOARd
+
+
+create new exam
+    add question
+      Select option type
+        MCQ - opt 1
+                opt2
+                opt3 
+                opt4
+        MCQ - multiple choice - 
+                opt1
+                opt2 ....
+        Para - 
+            TextBox 
+
+BACKEND -> 
+    qna -> coll -> exmName -> 
+                            
+                            [{
+                                ques: "",
+                                ansType: "MCQ",
+                                options: [opt1, opt2, opt3,....]
+                            },
+                            {
+                                ques: "",
+                                ansType: "para"
+                            }]    
+
+PAST created
+
+check results
+  past created
+  users results
+    download in csv

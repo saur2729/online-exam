@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <SignUp />
+        <Login />
       </BrowserRouter>
     </div>
   );

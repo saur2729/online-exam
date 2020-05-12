@@ -71,7 +71,7 @@ export default function SignUp() {
         firstName: state.firstName,
         lastName: state.lastName,
         email: state.email,
-        passsword : state.password
+        password : state.password
       })
     };
     alert(requestData.body)
